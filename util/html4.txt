@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Unique Vending Carts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="99%" height="100%" border="0" align="right" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="120" align="right" valign="top"> 
+      <!--header part start -->
+	     <table width="653" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="372" align="right" valign="top"><img src="images/logo.jpg" width="372" height="120"></td>
+          <td width="281" align="right" valign="top"><img src="images/right-img-top.jpg" width="281" height="120"></td>
+        </tr>
+      </table>      
+      <!--header part end -->
+    </td>
+  </tr>
+  <tr> 
+    <td height="100%" align="left" valign="top"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="90%" height="100%" align="left" valign="top"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td align="left" valign="top" background="images/body-bg.gif" bgcolor="#ffffff" style="border-top:8px solid #52683A; border-bottom:8px solid #52683A; border-left:8px solid #52683A; background-repeat:repeat-x;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="12" bgcolor="#000000"><img src="images/blank-image.gif" width="1" height="12"></td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="top">
+                        <!--links part start -->
+						   <html><P>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+<TBODY>
+<TR>
+<TD background=images/link-bg.gif><IMG height=23 src="http://004967b.netsolhost.com/images/left-cornet.gif" width=7><
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/home.php">Home</A></TD>
+<TD><IMG height=23 src="http://004967b.netsolhost.com/images/link-divider.gif" width=13></TD>
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/home.php">Videos</A></TD>
+<TD><IMG height=23 src="http://004967b.netsolhost.com/images/link-divider.gif" width=13></TD>
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/category.php">Product</A></TD>
+<TD><IMG height=23 src="http://004967b.netsolhost.com/images/link-divider.gif" width=13></TD>
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/color_customization.php">Color Customization</A> </TD>
+<TD><IMG height=23 src="http://004967b.netsolhost.com/images/link-divider.gif" width=13></TD>
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/contact-us.php">Contact Us</A></TD>
+<TD><IMG height=23 src="http://004967b.netsolhost.com/images/link-divider.gif" width=13></TD>
+<TD style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px" noWrap background=images/link-bg.gif><A class=toplink href="http://004967b.netsolhost.com/add-to-cart.php?view=1">View Cart</A></TD>
+<TD align=right><IMG height=23 src="http://004967b.netsolhost.com/images/right-corner.gif" width=7></TD>
+<TD align=right><IMG height=23 src="http://004967b.netsolhost.com/images/blank-image.gif" width=7></TD></TR></TBODY></TABLE></P>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+<TBODY>
+<TR>
+<                        <!--links part end -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td height="50" align="right"><img src="images/map1.gif" width="29" height="18" hspace="3" border="0" align="absmiddle"><img src="images/map2.gif" width="28" height="18" hspace="3" align="absmiddle"><img src="images/map3.gif" width="29" height="18" hspace="3" align="absmiddle"><img src="images/map4.gif" width="28" height="18" hspace="3" align="absmiddle"><img src="images/blank-image.gif" width="15" height="1"></td>
+                    </tr>
+                    <tr>
+                      <td style="padding:15px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="top"> 
+                            <td width="100%"><table width="100%" border="0" cellspacing="4" cellpadding="0">
+                                <tr> 
+                                  <td height="25" colspan="2" align="left" valign="top" class="redlink">If 
+                                    you have a question about the Our Product 
+                                    or Orders that you want to know then please 
+                                    submit it here.</td>
+                                </tr>
+                                <tr> 
+                                  <td width="54%" align="left" valign="top"><table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                      <tr> 
+                                        <td bgcolor="#97B98F"><form action="contact-us.php" method="post" name="form1" onsubmit="javascript: return check()"><table width="100%" border="0" cellpadding="8" cellspacing="1" >
+                                            <tr bgcolor="#D5E0D3"> 
+                                              <td colspan="2" class="heading">Contact Us. </td>
+                                            </tr>
+                                            <tr> 
+                                              <td width="38%" bgcolor="#EBF1EA">First 
+                                                Name</td>
+                                              <td width="62%" bgcolor="#EBF1EA"><input type="text" name="fname" style="border:1px solid #CCCA95; height:18px; width:150px;"></td>
+                                            </tr>
+                                            <tr> 
+                                              <td bgcolor="#EBF1EA">Last Name</td>
+                                              <td bgcolor="#EBF1EA"><input type="text" name="lname" style="border:1px solid #CCCA95; height:18px; width:150px;"></td>
+                                            </tr>
+                                            <tr> 
+                                              <td valign="top" bgcolor="#EBF1EA">Email</td>
+                                              <td bgcolor="#EBF1EA"><input type="text" name="email" style="border:1px solid #CCCA95; height:18px; width:150px;"></td>
+                                            <tr> 
+                                              <td valign="top" bgcolor="#EBF1EA">Subject</td>
+                                              <td bgcolor="#EBF1EA"><input type="text" name="subject" style="border:1px solid #CCCA95; height:18px; width:150px;"></td>
+                                            <tr> 
+                                              <td valign="top" bgcolor="#EBF1EA" > 
+                                                Message</td>
+                                              <td bgcolor="#EBF1EA"><textarea name="message" style="border:1px solid #CCCA95; height:60px; width:150px;"></textarea> 
+                                              </td>
+                                            <tr> 
+                                              <td valign="top" bgcolor="#EBF1EA">&nbsp; 
+                                              </td>
+                                              <td bgcolor="#EBF1EA"><input type="submit" name="Submit2" value="Submit" style="border:1px solid #647942; height:20px; background-color:#C1D2BD; width:60px"> 
+                                              </td>
+                                          </table></form> </td>
+                                      </tr>
+                                    </table></td>
+                                  <td width="46%" align="left" valign="top" class="twelvetext" style="line-height:22px; padding-left:15px;">
+                                    <strong>Unique Vending Carts </strong><br>
+                                      10018 Spanish Isles Blvd. Suite 22<br>
+                                      Boca Raton, FL 33498 <br>
+                                     <!--
+                                      <br>
+                                      <br> -->
+                                      USA <br>
+                                      <br>
+                                      Phone: (561) 488-2332 <br>
+
+                                      Toll Free(866)-483-2730<br>
+                                      FAX (561) 488-2331<br>
+                                      UK 44 - 020 799 35 456<br>
+                                      Email: <a href="mailto:sales@uniquevendingcarts.com">sales@uniquevendingcarts.com</a><br>
+                                      website: <a href="http://www.uniquevendingcarts.com">www.uniquevendingcarts.com</a>
+									 									
+									                              <td height="15"><img src="images/blank-image.gif" width="1" height="15"></td>
+              </tr>
+            </table></td>
+          <td width="281" height="100%" align="left" valign="top" background="images/right-bg.gif"> 
+            <!--right part start -->
+			   <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="272" align="left" valign="top"><img src="images/right-img-middle.jpg" width="281" height="272"></td>
+  </tr>
+  <tr> 
+    <td valign="top" style="padding:15px;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
+        <tr> 
+          <td style="color:#D0D01A"><strong>PRIVACY</strong></td>
+        </tr>
+        <tr> 
+          <td style="color:#ffffff; padding-right:12px;">We are committed to protecting 
+            your privacy. We use the information we collect about you to process 
+            orders and to provide a more personalized shopping experience.</td>
+        </tr>
+        <tr>
+          <td height="40" valign="bottom" style="color:#ffffff; padding-right:12px;"><hr size="1" noshade color="#76913E"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+            <!--right part end -->
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="25" align="center" valign="middle"> 
+      <!--footer part start -->
+         		<table width="100%" border="0" cellspacing="0" cellpadding="1">
+        <tr>
+          <td class="copyright" style="padding-left:250px;">copyright @ Unique Vending Carts.</td>
+        </tr>
+      </table>      <!--footer part end -->
+    </td>
+  </tr>
+</table>
+</body>
+
+<script language="JavaScript" type="text/javascript">
+function check()
+{
+if(document.form1.fname.value=='')
+{
+alert("Please enter your First Name.");
+document.form1.fname.focus();
+return false;
+}
+else if(document.form1.subject.value=='')
+{
+alert("Please enter Subject.");
+document.form1.subject.focus();
+return false;
+}
+else if(document.form1.email.value=='')
+{
+alert(Please enter your Email.);
+document.form1.email.focus();
+return false;
+}
+else if(document.form1.email.value!='')
+{
+return validateEmail(form1);
+}
+
+return true;
+}
+
+function validateEmail(form) 
+{
+  //Validating the email field
+   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+   if (! form.email.value.match(re)) {
+       alert("Invalid email address");
+       form.email.focus();
+       form.email.select();
+       return (false);
+   }
+   return(true);
+ }
+
+</script>
+
+</html>

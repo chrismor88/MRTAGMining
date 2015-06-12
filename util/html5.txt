@@ -1,0 +1,127 @@
+<div style="padding:10px;">
+<table border="0" cellpadding="0" cellspacing="0" style="display:block">
+<tr>
+<td height="200" align="left" valign="top"><table width="180" height="180" class="maketable">
+<tr>
+<td align="left" valign="top" class="bodysans1" style="padding-top:5px">
+<a href="/index.php"><img src="/img/b_home_f01.gif" alt="Home" name="b_home" width="150" height="18" border="0" id="b_home" onmouseover="MM_swapImage('b_home','','/img/b_home_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br>
+
+<a href="/about.php"><img src="/img/b_about_f01.gif" alt="about" name="b_about" width="150" height="18" border="0" id="b_about" onmouseover="MM_swapImage('b_about','','/img/b_about_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br>
+
+<a href="http://filmguide.wifilmfest.org/tixSYS/2008/filmguide/"><img src="/img/b_tickets_f01.gif" alt="Tickets" name="b_tickets" width="150" height="18" border="0" id="b_tickets" onmouseover="MM_swapImage('b_tickets','','/img/b_tickets_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br />
+
+<a href="/awards.php"><img src="/img/b_awards_f03.gif" alt="theaters" name="b_awards" width="150" height="18" border="0" id="b_awards" onmouseover="MM_swapImage('b_awards','','/img/b_awards_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br />
+
+<a href="/theaters.php"><img src="/img/b_theaters_f01.gif" alt="theaters" name="b_theaters" width="150" height="18" border="0" id="b_theaters" onmouseover="MM_swapImage('b_theaters','','/img/b_theaters_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br />
+
+<a href="/hotel.php"><img src="/img/b_hotel_f01.gif" alt="hotel" name="b_hotel" width="150" height="18" border="0" id="b_hotel" onmouseover="MM_swapImage('b_hotel','','/img/b_hotel_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br />
+
+<a href="/press.php"><img src="/img/b_press_f01.gif" alt="press" name="b_press" width="150" height="18" border="0" id="b_press" onmouseover="MM_swapImage('b_press','','/img/b_press_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br>
+
+<a href="/support.php"><img src="/img/b_support_f01.gif" alt="Support the Festival" name="b_support" width="150" height="18" border="0" id="b_support" onmouseover="MM_swapImage('b_support','','/img/b_support_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br />
+
+<!-- <a href="/volunteer.php"><img src="/img/b_volunteer_f01.gif" alt="Volunteer at the Festival" name="b_volunteer" width="150" height="18" border="0" id="b_volunteer" onmouseover="MM_swapImage('b_volunteer','','/img/b_volunteer_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br /> -->
+
+<!-- <a href="/othermovies.php"><img src="/img/b_othermovies_f01.gif" alt="othermovies" name="b_othermovies" width="150" height="18" border="0" id="b_othermovies" onmouseover="MM_swapImage('b_othermovies','','/img/b_othermovies_f02.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br>  -->
+
+
+</td>
+</tr>
+</table><a href="http://www.thechrisproject.com/" target="_blank"><img src="/img/box_dates.gif" alt="April 3 to 6, 2008" name="box_dates1" width="200" height="200" hspace="0" vspace="0" border="0" id="box_dates1" onmouseover="MM_swapImage('box_dates1','','/img/box_marquee.gif',1)" onmouseout="MM_swapImgRestore()" /></a><br>
+<img src="/img/box_wff_logo.gif"></td>
+<td width="100%" align="left" valign="top"><table cellpadding="10" style="border:1px; border-color:#FFFFFF; border-style:solid; margin:10px">
+<tr>
+<td align="left" valign="top" height="575px"><p class="mainhead"><img src="/img/h_awards.gif" alt="2008 Awards" width="191" height="27"></p>
+<p class="mainhead"><strong>Winners of the Steep &amp; Brew Audience Award</strong></p>
+<p class="bodysans1" style="font-weight:bold; font-style:italic; margin-top: 0px;">voted by the audience for films 60 minutes or longer </p>
+<p class="bodysans1"> BEST NARRATIVE FILM<br />
+<span class="mainhead_bi12">Time to Die</span> (<em>Pora Umiera&#263;</em>)
+| directed by Dorota&nbsp;K&#281;dzierzawska<br />
+Poland, 2007, 104&nbsp;mins<br />
+<span class="bodysans_small"><img src="http://2008.wifilmfest.org/img/still_timetodie.jpg" alt="Time to Die" width="150" height="84" border="3" style="float:left; margin-top:3px; margin-right: 5px; border:3px #000000 !important;" /><em>Time
+to Die</em> is the story of elderly Aniela, the owner of a once beautiful, now
+run-down, wooden villa. After many years, she is finally &ldquo;freed&rdquo; of
+the last tenant in that mansion, forced upon her by the Communist government
+after World War II. She is once again the master of her own house. But this beautiful,
+long-awaited moment is far from what she had hoped. Her only son wants to sell
+the house, and there are now noisy neighbors (although they are fun to spy on
+with her binoculars). Shut off from the world, Aniela&rsquo;s only companion
+is her (quite wonderful) dog, at least until a kid from the youth center start
+sneaking through the fence onto her property. Shot in luminous black-and-white
+and written especially for the actress Danuta Szaflarska, who was 91 years old
+at the time, the film is a &ldquo;stunning visual universe created by K&#281;dzierzawska
+and her cinematographer Arthur Reinhart. They are indeed true magicians of the
+eye, unafraid to let the camera paint pictures in front of us. This is the special
+and particular terrain of this film: the thoughtful depiction of the inner life
+of an elderly person. K&#281;dzierzawska and Reinhart&rsquo;s series of stunning
+images and the unforgettable dignity of Aniela combine to make <em>Time to Die</em> a
+unique film.&rdquo; &mdash; Piers Handling, Toronto International Film Festival.</span></p>
+<p class="bodysans1"> BEST DOCUMENTARY FILM | <span style="color:#5f4d3a"><a href="http://www.pbs.org/independentlens/guide.html" target="_blank">watch
+on PBS May&nbsp;27</a></span><br />
+<span class="mainhead_bi12">New Year Baby</span> | directed by Socheata Poeuv<br />
+USA, 2007, 75 mins<br />
+<em>presented by the UW Asian American Studies Program<br />
+</em><span class="bodysans_small"><img src="http://2008.wifilmfest.org/img/still_newyearbaby.jpg" alt="New Year Baby" width="150" height="113" border="3" style="float:left; margin-top:3px; margin-right: 5px; border:3px #000000 !important;" />Born
+in a Cambodia refugee camp and raised with her family in Texas, Socheata Poeuv
+learns the real story of her parent&rsquo;s survival and of her own heritage:
+her sisters are really cousins, adopted after her aunt was killed by the Khmer
+Rouge, and her brother is the son of her mother&rsquo;s never-mentioned first
+husband. The family returns to Cambodia in a journey that is remarkably engaging,
+thanks to Socheata&rsquo;s onscreen appeal and her dedication to allowing her
+parents to gradually re-enter that time of their lives that was so harrowing.
+A multiple award-winner, &ldquo;it&rsquo;s a remarkable story with lump-in-throat
+impact.&rdquo; &mdash;<em>Variety</em>.</span></p>
+<p class="bodysans1" style="clear:both; padding-top:15px;"> Thank you to <strong><a href="http://www.steepnbrew.com/" target="_blank">Steep &amp; Brew
+Coffee Roasters</a></strong> for helping present quality films at the 2008 Wisconsin
+Film Festival.</p>
+<p class="bodysans1"> :</p>
+<p class="mainhead"> Winners of the Wisconsin&rsquo;s Own and
+Wisconsin Student Short Film awards</p>
+<p class="bodysans1"> Support for Wisconsin films comes from <strong><a href="http://www.cnh.com/" target="_blank">Case IH Agriculture</a></strong>,
+a brand of CNH, part of the Fiat Group, based in Racine, Wisconsin. <br />
+<br />
+<strong class="mainhead">&ldquo;Wisconsin&rsquo;s Own&rdquo; winners </strong> <br />
+<br />
+<span class="mainhead_bi12">Alaska Far Away</span> | directed by Paul Hill and Joan
+Juster <br />
+<span class="mainhead_bi12"><br />
+The Closing Hour</span> | directed by Grey Gerling<br />
+<br />
+<span class="mainhead_bi12">The European Kid</span> | directed by Ian Martin<br />
+<br />
+<span class="mainhead_bi12">Madison</span> | directed by Brent Notbohm<br />
+<br />
+<span class="mainhead_bi12">Perceval</span> | directed by Tate Bunker</p>
+<p class="bodysans1" style="margin-bottom:1px; padding-bottom:1px;">2008 Wisconsin&rsquo;s
+Own jurors:</p>
+<p class="bodysans1" style="margin-top:1px !important; padding-top:1px !important; margin-left:10px"><strong>Ali
+Selim</strong>, director of <em>Sweet Land</em> (WFF06) <br />
+<strong>Jim Kreul</strong>, founder of the Wisconsin Film Festival, filmmaker,
+and professor at University of North Carolina-Wilmington<br />
+<strong>Brijetta Hall Waller</strong>, documentary filmmaker and lecturer at
+Columbia College, Chicago</p>
+<p class="bodysans1"><strong class="mainhead">&ldquo;Wisconsin Student Shorts&rdquo; winners</strong><br />
+<br />
+<span class="mainhead_bi12">Otto&rsquo;s Day</span> | directed by Ji-Sun O <br />
+<br />
+<span class="mainhead_bi12">Passing Through</span> | directed by Jonathan Bothun <br />
+<br />
+<span class="mainhead_bi12">Them&rsquo;s Trying Times to be a Canine</span> | directed
+by Joseph Kraemer</p>
+<p class="bodysans1" style="margin-bottom:1px; padding-bottom:1px;">2008 Wisconsin
+Student Shorts jurors:</p>
+<p class="bodysans1" style="margin-top:1px !important; padding-top:1px !important; margin-left:10px"><strong>Katherine
+Turczan</strong>, filmmaker, Chair of the Media Arts Department, and Professor
+at the Minneapolis College of Art and Design in Minneapolis.<br />
+<strong>Jim Stanger</strong>, film editor<br />
+<strong>Max Selim</strong>, filmmaker and screenwriter<br />
+<strong>Thomas Pope</strong>, screenwriter and lecturer and the Minneapolis College
+of Art and Design<br />
+<strong>Ali Selim</strong>, director of <em>Sweet Land</em> (WFF06).</p>
+</td>
+</tr>
+</table></td>
+<td width="220" align="left" valign="top">&nbsp;</td>
+</tr>
+</table>
+</div>
