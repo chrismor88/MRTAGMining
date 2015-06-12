@@ -29,7 +29,7 @@ public class tagger {
 	    job1.setReducerClass(taggerReducer.class);
 	    //job1.setNumReduceTasks(1);
 	    job1.setOutputKeyClass(Text.class);
-	    job1.setOutputValueClass(IntWritable.class);
+	    job1.setOutputValueClass(Text.class);
 	    FileInputFormat.addInputPath(job1, new Path(args[0]));
 	    FileOutputFormat.setOutputPath(job1, new Path(args[1]));
 	    job1.waitForCompletion(true);
