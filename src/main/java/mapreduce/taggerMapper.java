@@ -16,10 +16,10 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 		String line = value.toString();
 		String TaggedPhase = TAGComponent.tagPhrase("", line);
-		
-		phrase.set(line);
-		phrase2.set(TaggedPhase);
-		context.write(phrase, phrase2);
-    	
+		if (!line.equals(TaggedPhase)){
+			phrase.set(line);
+			phrase2.set(TaggedPhase);
+			context.write(phrase, phrase2);
+		}
     } 
 }
