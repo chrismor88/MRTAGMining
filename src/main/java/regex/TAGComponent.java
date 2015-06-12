@@ -106,7 +106,7 @@ public class TAGComponent {
 	
 	
 	
-	public static void tagPhrase(String trecID,String phrase){
+	public static String tagPhrase(String trecID,String phrase){
 		String firstPart = phrase.substring(0,(phrase.length()/2));
 		String secondPart = phrase.substring(phrase.length()/2);
 		
@@ -135,6 +135,7 @@ public class TAGComponent {
 			TAGMiningFileWriter.writeOutput3(trecID,changedPhrase);
 		}
 		
+		return changedPhrase;
 	}
 	
 	
