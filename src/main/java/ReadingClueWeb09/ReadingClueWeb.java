@@ -146,7 +146,7 @@ public class ReadingClueWeb {
 					*/
 
 					try {
-						File file = new File("/home/roberto/Scrivania/phases.txt");
+						File file = new File("/home/roberto/Scrivania/phrases.txt");
 
 						if (file.exists()){
 							try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -159,7 +159,7 @@ public class ReadingClueWeb {
 							}
 
 							PrintWriter pw = new PrintWriter(new FileWriter(file, true));
-							pw.write(phrase+"\n");
+							pw.write(trecID+"#"+phrase+"\n");
 							pw.flush();
 							pw.close();
 						}
@@ -167,7 +167,7 @@ public class ReadingClueWeb {
 						else{
 							
 								PrintWriter pw = new PrintWriter(file);
-								pw.write(phrase);
+								pw.write(trecID+"#"+phrase+"\n");
 								pw.flush();
 								pw.close();
 								

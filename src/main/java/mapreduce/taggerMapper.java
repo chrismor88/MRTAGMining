@@ -15,7 +15,10 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
     
 	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 		String line = value.toString();
-		String TaggedPhase = TAGComponent.tagPhrase("", line);
+		String[] spittedLine = line.split("#");
+		String trecID = spittedLine[0];
+		String singlePhrase = spittedLine[1];
+		String TaggedPhase = TAGComponent.tagPhrase("", singlePhrase);
 		if (!line.equals(TaggedPhase)){
 			phrase.set(line);
 			phrase2.set(TaggedPhase);
