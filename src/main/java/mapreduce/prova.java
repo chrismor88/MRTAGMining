@@ -23,13 +23,14 @@ public class prova {
 	      s=b.readLine();
 	      if(s==null)
 	        break;
-	      System.out.println("frase: "+s);
+	      //System.out.println("frase: "+s);
 	      String[] spittedLine = s.split("#");
 	      String trecID = spittedLine[0];
 	      String singlePhrase = spittedLine[1];
 	      String TaggedPhase = TAGComponent.tagPhrase("", singlePhrase);
 	      if (!singlePhrase.equals(TaggedPhase)){
-				
+				System.out.println("singlePhrase: "+singlePhrase);
+				System.out.println("TaggedPhase: "+TaggedPhase);
 				/*List<String> URLS = TAGComponent.tagSingleURL(trecID, singlePhrase, TaggedPhase);
 				for (int i = 0; i < URLS.size()-1; i++) {
 					System.out.println("singolo url: "+trecID+"#"+URLS.get(i));
