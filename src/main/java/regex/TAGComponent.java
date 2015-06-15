@@ -101,7 +101,7 @@ public class TAGComponent {
 	private final static String DATA_RATE_MEASURE = "(Kbps|Mbps|Gbps|(Kb\\/s(ec)?)|(Mb\\/s(ec)?)|(Gb\\/s(ec?))|(KB\\/s(ec)?)|(MB\\/s(ec)?)|(GB\\/s(ec)?))";
 
 
-	private final static String REGEX_NUM = "(([\\+-]?\\[1-9]\\d+)|([\\+-]?\\d[\\.,]\\d+))";
+	private final static String REGEX_NUM = "(([\\+-]?[1-9]\\d*)|([\\+-]?\\d[\\.,]\\d+))";
 	
 	
 	private final static String REGEX_URL = "(http(s?):\\/\\/)*([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.)+[a-z]{2,6}(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*";
