@@ -25,7 +25,7 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 		String TaggedPhase = TAGComponent.tagPhrase("", singlePhrase);
 		
 		if (!singlePhrase.equals(TaggedPhase)){
-			
+			/*
 			List<String> URLS = TAGComponent.tagSingleURL(trecID, singlePhrase);
 			for (int i = 0; i < URLS.size(); i++) {
 				TAGMiningFileWriter.writeOutput1(trecID, URLS.get(i), "#URL");
@@ -33,7 +33,7 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 				phrase2.set("#URL");
 				context.write(phrase, phrase2);
 			}
-			/*PrintWriter pw = new PrintWriter("util/output2.txt");
+			PrintWriter pw = new PrintWriter("util/output2.txt");
 			pw.println(trecID+"\t"+singlePhrase);
 			PrintWriter pw2 = new PrintWriter("util/output3.txt");
 			pw2.println(trecID+"\t"+TaggedPhase);

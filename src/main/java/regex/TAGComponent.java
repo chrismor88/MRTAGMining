@@ -104,18 +104,20 @@ public class TAGComponent {
 	private final static String REGEX_NUM = "(([\\+-]?[1-9]\\d*)|([\\+-]?\\d[\\.,]\\d+))";
 	
 	
+	
 	private final static String REGEX_URL = "(http(s?):\\/\\/)*([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?\\.)+[a-z]{2,6}(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*";
-	private final static String REGEX_DISTANCE = REGEX_NUM+"\\s?"+LENGTH_MEASURE;
-	private final static String REGEX_AREA = REGEX_NUM+"\\s?"+AREA_MEASURE;
-	private final static String REGEX_VOLUME = REGEX_NUM+"\\s?"+VOLUME_MEASURE;
-	private final static String REGEX_SPEED = REGEX_NUM+"\\s?"+SPEED_MEASURE;
-	private final static String REGEX_WEIGHT = REGEX_NUM+"\\s?"+WEIGHT_MEASURE;
-	private final static String REGEX_TEMPERATURE = "\\d+(\\.|,)?\\d+\\s?"+TEMPERATURE_MEASURE;
+	private final static String REGEX_DISTANCE = "\\d+([\\.,]\\d+)?"+"\\s?"+LENGTH_MEASURE;
+	private final static String REGEX_AREA = "\\d+([\\.,]\\d+)?"+"\\s?"+AREA_MEASURE;
+	private final static String REGEX_VOLUME = "\\d+([\\.,]\\d+)?"+"\\s?"+VOLUME_MEASURE;
+	private final static String REGEX_SPEED = "\\d+([\\.,]\\d+)?"+"\\s?"+SPEED_MEASURE;
+	private final static String REGEX_WEIGHT = "\\d+([\\.,]\\d+)?"+"\\s?"+WEIGHT_MEASURE;
+	private final static String REGEX_TEMPERATURE = REGEX_NUM+"\\s?"+TEMPERATURE_MEASURE;
 	private final static String REGEX_PRESSURE = REGEX_NUM+"\\s?"+PRESSURE_MEASURE;
-	private final static String REGEX_DATA_RATE = REGEX_NUM+"\\s*"+DATA_RATE_MEASURE;
+	private final static String REGEX_DATA_RATE = "\\d+([\\.,]\\d+)?"+"\\s*"+DATA_RATE_MEASURE;
 	private final static String REGEX_TIME = time1+"|"+time2;
 	private final static String REGEX_MONEY = CURRENCY+"\\s?\\d+(\\.|,)\\d+|\\d+(\\.|,)\\d+\\s?"+CURRENCY+"|"+CURRENCY+"\\s?\\d+"+"|"+"\\s\\d+\\s?"+CURRENCY;
 	private final static String REGEX_DATA = REGEX_NUM+"\\s?"+DATA_MEASURE;
+	private final static String REGEX_DATE_RANGE = "([12]\\d{3}[\\/-][12]\\d{3})|([12]\\d{3}[\\/-]\\d{2})";
 	
 	/*
 	private final static String REGEX_PHONE = "((\\+)*(\\d+-)*\\(\\d+\\)(-|\\s)+\\d+(-|\\s)*\\d+)| (\\d+\\.\\d+\\.\\d+)|((\\+)*\\d+\\s\\d+\\s\\d+(\\s\\d+)*)|(\\d+-\\d+-\\d+\\d+\\s\\d+)|((\\+)+\\d*\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+)|((\\d+\\s)+\\d+\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+)|((\\+\\d+\\s)*\\d+-\\d+\\s\\d+)"+
@@ -154,7 +156,7 @@ public class TAGComponent {
 	final static String TAG_TEMPERATURE = " #TEMPERATURE ";
 	final static String TAG_PRESSURE = " #PRESSURE ";
 	final static String TAG_DATA = " #DATA ";
-
+	final static String TAG_DATE_RANGE = " #DATE_RANGE ";
 
 
 

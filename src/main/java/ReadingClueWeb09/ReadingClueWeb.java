@@ -16,6 +16,8 @@ import regex.TAGComponent;
 import writer_text.TAGMiningFileWriter;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import clean.CleanerPhrase;
 
@@ -203,13 +205,31 @@ public class ReadingClueWeb {
 	private static String getHTMLBody(String HTMLContent){
 		String aux="";
 		try {
-			aux= Jsoup.parse(HTMLContent).body().text();
-			
+
+
+			Element bodyHTML = Jsoup.parse(HTMLContent, "UTF-8").body();
+
+
+			Elements pTags = bodyHTML.getElementsByTag("p");
+
+			for(Element p:pTags){
+
+				String[] parole = p.text().split(" ");
+
+				if(parole.length > 4){
+					//System.out.println(p.text());
+					aux += p.text();
+				}
+			}
+
+
+
+			//aux= Jsoup.parse(HTMLContent).body().text();
+
 
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}
 		return aux;
 	}
-
 }
