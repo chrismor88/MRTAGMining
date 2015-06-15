@@ -12,7 +12,7 @@ public class prova {
 	public static void main(String[] args) throws IOException {
 		FileReader f;
 	    //f=new FileReader("/media/roberto/ROB/Università (Roma Tre)/Big Data/ratebeer.txt");
-		f=new FileReader("/home/roberto/Scrivania/phrases.txt");
+		f=new FileReader("util/phrases.txt");
 
 	    BufferedReader b;
 	    b=new BufferedReader(f);

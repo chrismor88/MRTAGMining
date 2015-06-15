@@ -10,7 +10,7 @@ import java.nio.file.Files;
 
 public class TAGMiningFileWriter {
 	
-	private final static String PATH = "/home/roberto/Scrivania/TAGMining_output/";
+	private final static String PATH = "util/TAGMining_output/";
 	private final static String PATH1 = PATH+"output1.txt";
 	private final static String PATH2 = PATH+"output2.txt";
 	private final static String PATH3 = PATH+"output3.txt";
