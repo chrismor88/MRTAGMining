@@ -132,8 +132,8 @@ public class TAGComponent {
 		
 		
 		if(!phrase.equals(changedPhrase)){
-			TAGMiningFileWriter.writeOutput2(trecID,phrase);
-			TAGMiningFileWriter.writeOutput3(trecID,changedPhrase);
+			//TAGMiningFileWriter.writeOutput2(trecID,phrase);
+			//TAGMiningFileWriter.writeOutput3(trecID,changedPhrase);
 		}
 		
 		return changedPhrase;
@@ -142,10 +142,10 @@ public class TAGComponent {
 	
 	
 	
-	private static String tagPhraseURL(String trecID, String phrase,String changedPhrase) {
+	private static String tagPhraseURL(String trecID, String phrase) {
 
 		int startIndex, endIndex = 0;
-		
+		String changedPhrase=phrase; 
 		
 		Pattern patternURL = Pattern.compile(REGEX_URL);
 		Matcher matcherURL = patternURL.matcher(phrase);
@@ -156,7 +156,7 @@ public class TAGComponent {
 			String matchedSubString = matcherURL.group();
 		
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_URL);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_URL);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -168,10 +168,10 @@ public class TAGComponent {
 		return changedPhrase;
 	}
 	
-	public static List<String> tagSingleURL(String trecID, String phrase,String changedPhrase) {
+	public static List<String> tagSingleURL(String trecID, String phrase) {
 
 		int startIndex, endIndex = 0;
-		
+		String changedPhrase=phrase;
 		
 		Pattern patternURL = Pattern.compile(REGEX_URL);
 		Matcher matcherURL = patternURL.matcher(phrase);

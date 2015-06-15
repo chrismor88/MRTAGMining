@@ -31,11 +31,11 @@ public class prova {
 	      if (!singlePhrase.equals(TaggedPhase)){
 				System.out.println("singlePhrase: "+singlePhrase);
 				System.out.println("TaggedPhase: "+TaggedPhase);
-				/*List<String> URLS = TAGComponent.tagSingleURL(trecID, singlePhrase, TaggedPhase);
+				List<String> URLS = TAGComponent.tagSingleURL(trecID, singlePhrase, singlePhrase);
 				for (int i = 0; i < URLS.size()-1; i++) {
 					System.out.println("singolo url: "+trecID+"#"+URLS.get(i));
 					
-				}*/
+				}
 				
 	    	  	System.out.println("Frase taggata: "+TaggedPhase);
 				
