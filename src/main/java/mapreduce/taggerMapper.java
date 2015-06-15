@@ -1,6 +1,8 @@
 package mapreduce;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.List;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -19,7 +21,16 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 		String trecID = spittedLine[0];
 		String singlePhrase = spittedLine[1];
 		String TaggedPhase = TAGComponent.tagPhrase("", singlePhrase);
-		if (!line.equals(TaggedPhase)){
+		
+		if (!singlePhrase.equals(TaggedPhase)){
+			
+			List<String> URLS = TAGComponent.tagSingleURL(trecID, singlePhrase, TaggedPhase);
+			for (int i = 0; i < URLS.size()-1; i++) {
+				phrase.set(trecID+"#"+URLS.get(i));
+				phrase2.set("#URL");
+				context.write(phrase, phrase2);
+			}
+			
 			phrase.set(line);
 			phrase2.set(TaggedPhase);
 			context.write(phrase, phrase2);

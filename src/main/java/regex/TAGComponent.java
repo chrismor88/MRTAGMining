@@ -1,5 +1,7 @@
 package regex;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -110,8 +112,7 @@ public class TAGComponent {
 		String firstPart = phrase.substring(0,(phrase.length()/2));
 		String secondPart = phrase.substring(phrase.length()/2);
 		
-		
-		
+				
 		if(firstPart.equals(secondPart)){
 			System.out.println("First Part: "+firstPart);
 			System.out.println("Second Part: "+secondPart);
@@ -165,6 +166,29 @@ public class TAGComponent {
 		}
 		
 		return changedPhrase;
+	}
+	
+	public static List<String> tagSingleURL(String trecID, String phrase,String changedPhrase) {
+
+		int startIndex, endIndex = 0;
+		
+		
+		Pattern patternURL = Pattern.compile(REGEX_URL);
+		Matcher matcherURL = patternURL.matcher(phrase);
+		
+		List<String> URLS = new ArrayList<String>();
+		while(matcherURL.find()){
+			
+			startIndex = matcherURL.start();
+			endIndex = matcherURL.end();
+			String matchedSubString = matcherURL.group();
+			URLS.add(matchedSubString);
+		    
+			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_URL+changedPhrase.substring(endIndex);
+			matcherURL = patternURL.matcher(changedPhrase);
+		}
+		
+		return URLS;
 	}
 
 	public static void main(String[] args) {

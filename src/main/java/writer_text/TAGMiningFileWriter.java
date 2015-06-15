@@ -25,9 +25,9 @@ public class TAGMiningFileWriter {
 			if (file.exists()){
 				try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 					String line = null;
-					while ((line = reader.readLine()) != null) {
+					/*while ((line = reader.readLine()) != null) {
 						System.out.println(line);
-					}
+					}*/
 				} catch (IOException x) {
 					System.err.format("IOException: %s%n", x);
 				}
@@ -68,9 +68,9 @@ public class TAGMiningFileWriter {
 			if (file.exists()){
 				try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 					String line = null;
-					while ((line = reader.readLine()) != null) {
+					/*while ((line = reader.readLine()) != null) {
 						System.out.println(line);
-					}
+					}*/
 				} catch (IOException x) {
 					System.err.format("IOException: %s%n", x);
 				}
@@ -106,9 +106,9 @@ public class TAGMiningFileWriter {
 			if (file.exists()){
 				try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
 					String line = null;
-					while ((line = reader.readLine()) != null) {
+					/*while ((line = reader.readLine()) != null) {
 						System.out.println(line);
-					}
+					}*/
 				} catch (IOException x) {
 					System.err.format("IOException: %s%n", x);
 				}
