@@ -18,7 +18,7 @@ public class TestJSoup {
 		
 				try {
 					String aux= Jsoup.parse(fileHTML,"UTF-8").text();
-					System.out.println(aux);
+					//System.out.println(aux);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

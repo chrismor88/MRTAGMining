@@ -1,5 +1,6 @@
 package ReadingClueWeb09;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +26,8 @@ import clean.CleanerPhrase;
 
 public class ReadingClueWeb {
 	public static void main(String[] args) throws IOException {
+		System.out.println("inizio");
+		long start = System.currentTimeMillis();
 		
 		final String REGEX_PHONE = "(\\+)*(\\d+-)*\\(\\d+\\)(-|\\s)+\\d+(-|\\s)*\\d+|\\d+\\.\\d+\\.\\d+|(\\+)*\\d+\\s\\d+\\s\\d+(\\s\\d+)*|\\d+-\\d+-\\d+\\d+\\s\\d+|(\\+)+\\d*\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+|(\\d+\\s)+\\d+\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+|(\\+\\d+\\s)*\\d+-\\d+\\s\\d+"+
 				"|\\d+\\s\\(\\d+\\)\\s\\d+\\s\\d+|\\d{3,4}\\s\\d{4}";
@@ -92,9 +95,10 @@ public class ReadingClueWeb {
                 WarcHTMLResponseRecord htmlRecord=new WarcHTMLResponseRecord(thisWarcRecord);
                 // get our TREC ID and target URI
                 String trecID=htmlRecord.getTargetTrecID();
+                
                 String thisTargetURI=htmlRecord.getTargetURI();
                 // print our data
-                System.out.println(trecID + " : " + thisTargetURI);
+                //System.out.println(trecID + " : " + thisTargetURI);
                 
                 String HTMLContent = htmlRecord.getRawRecord().getContentUTF8();
 				String HTMLContent2="";
@@ -146,40 +150,20 @@ public class ReadingClueWeb {
 					System.out.println("=======================================");
 					System.out.println();
 					*/
-
+					PrintWriter out=null;
+					
 					try {
-						File file = new File("/home/roberto/Scrivania/phrases.txt");
-
-						if (file.exists()){
-							try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-								String line = null;
-								while ((line = reader.readLine()) != null) {
-									System.out.println(line);
-								}
-							} catch (IOException x) {
-								System.err.format("IOException: %s%n", x);
-							}
-
-							PrintWriter pw = new PrintWriter(new FileWriter(file, true));
-							pw.write(trecID+"#"+phrase+"\n");
-							pw.flush();
-							pw.close();
-						}
-
-						else{
-							
-								PrintWriter pw = new PrintWriter(file);
-								pw.write(trecID+"#"+phrase+"\n");
-								pw.flush();
-								pw.close();
-								
-								
-							
-						}
-					}
-					catch (IOException e) {
+						out = new PrintWriter(new BufferedWriter(new FileWriter("util/phrases", true)));
+						out.println(trecID+"#"+phrase);
+						
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
+					finally{
+						out.close();
+					}
+					
 					//String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
 					//TAGComponent.tagPhrase(trecID, cleanedPhrase);
 					
@@ -200,7 +184,8 @@ public class ReadingClueWeb {
             //pw.close();
             inStream.close();
             System.out.println("CONCLUSO");
-
+            long end = System.currentTimeMillis();
+            System.out.println("in: "+(end-start));
           }
 	private static String getHTMLBody(String HTMLContent){
 		String aux="";
