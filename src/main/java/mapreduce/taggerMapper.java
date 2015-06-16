@@ -19,10 +19,17 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
     
 	public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 		String line = value.toString();
-		String[] spittedLine = line.split("#");
-		String trecID = spittedLine[0];
-		String singlePhrase = spittedLine[1];
-		String TaggedPhase = TAGComponent.tagPhrase("", singlePhrase);
+		String[] splittedLine = line.split("#");
+		if (splittedLine.length>1){
+		String trecID = splittedLine[0];
+		String singlePhrase="";
+		try {
+			singlePhrase = splittedLine[1];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			singlePhrase="prova prova prova prova";
+			System.out.println("============");
+		}
+		String TaggedPhase = TAGComponent.tagPhrase(trecID, singlePhrase);
 		
 		if (!singlePhrase.equals(TaggedPhase)){
 			/*
@@ -39,11 +46,12 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 			pw2.println(trecID+"\t"+TaggedPhase);
 			pw.close();
 			pw2.close();*/
-			TAGMiningFileWriter.writeOutput2(trecID,singlePhrase);
-			TAGMiningFileWriter.writeOutput3(trecID, TaggedPhase);
+			//TAGMiningFileWriter.writeOutput2(trecID,singlePhrase);
+			//TAGMiningFileWriter.writeOutput3(trecID, TaggedPhase);
 			phrase.set(line);
 			phrase2.set(TaggedPhase);
 			context.write(phrase, phrase2);
+		}
 		}
     } 
 }

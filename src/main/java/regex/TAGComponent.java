@@ -16,7 +16,8 @@ import writer_text.TAGMiningFileWriter;
 public class TAGComponent {
 
 	/* REGEX */
-	private final static String TLDs = "\\.(com|us|it|en|org|edu|net|int|gov|mil|arpa|museum|ac|ad|ae|af|ag|ai|ao|aq|ar|as|at|au|aw|"+"ax|br|fr|eu|es|de|gb|va|ye|pub)";
+
+	private final static String TLDs = "\\.(com|us|it|en|org|edu|net|fr|es)";
 	//for format time hh:mm:ss, hh:mm, hh:mm am, hh:mm:ss pm ...........
 	private final static String time1 ="(([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?\\s?(am|AM|pm|PM)?)";
 
@@ -104,7 +105,9 @@ public class TAGComponent {
 	private final static String REGEX_NUM = "(([\\+-]?[1-9]\\d*)|([\\+-]?\\d[\\.,]\\d+))";
 	
 	
-	private final static String REGEX_URL = "(http(s?):\\/\\/)*((\\w+(\\.|-|_)\\w+)+|\\w+)"+TLDs;
+//	private final static String REGEX_URL = "(http(s?):\\/\\/)*((\\w+(\\.|-|_)\\w+)+|\\w+)"+TLDs;
+//	private final static String REGEX_URL = "(http(s?):\\/\\/)*((\\w+(\\.|-|_)\\w+)+|\\w+)\\.[a-z]{2,4}";
+	private final static String REGEX_URL = "(http(s?):\\/\\/)?([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?"+TLDs+"(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*)";
 	private final static String REGEX_DISTANCE = "\\d+([\\.,]\\d+)?"+"\\s?"+LENGTH_MEASURE;
 	private final static String REGEX_AREA = "\\d+([\\.,]\\d+)?"+"\\s?"+AREA_MEASURE;
 	private final static String REGEX_VOLUME = "\\d+([\\.,]\\d+)?"+"\\s?"+VOLUME_MEASURE;
@@ -129,7 +132,10 @@ public class TAGComponent {
 			"(\\s\\d{3}-\\d{3}-\\d{3}-\\d{4}\\s)|(\\s(\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4}\\s)|(\\s(\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4}\\s)|(\\s\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4}\\s)|"+
 			"(\\(\\d{3}\\)\\d{3}-\\d{4})";
 	
+	
 	private final static String REGEX_DATE = date1+"|"+date2+"|"+date3+"|"+date4+"|"+date5+"|"+date6+"|"+date7+"|"+date8+"|"+date9+"|"+date10+"|"+date11+"|"+date12;
+//	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
+//	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+\\.[a-z]{2,4}";
 	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
 
 
@@ -232,7 +238,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_ORD);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_ORD);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -263,7 +269,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_WEIGHT);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_WEIGHT);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -294,7 +300,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_SPEED);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_SPEED);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -325,7 +331,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -356,7 +362,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PRESSURE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PRESSURE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -388,7 +394,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TEMPERATURE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TEMPERATURE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -419,7 +425,7 @@ public class TAGComponent {
 
 			
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_NUM);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_NUM);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -449,7 +455,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA_RATE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA_RATE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -478,7 +484,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_VOLUME);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_VOLUME);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -507,7 +513,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_AREA);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_AREA);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -536,7 +542,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DISTANCE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DISTANCE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -565,7 +571,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_MONEY);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_MONEY);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -594,7 +600,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TIME);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TIME);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -623,7 +629,7 @@ public class TAGComponent {
 			String matchedSubString = matcher.group();
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_EMAIL);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_EMAIL);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -657,7 +663,7 @@ public class TAGComponent {
 			//System.out.println(phrase);
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -686,7 +692,7 @@ public class TAGComponent {
 			//System.out.println("MATCHED SUBSTRING: "+matchedSubString);
 
 			try {
-				TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PHONE);
+				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PHONE);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

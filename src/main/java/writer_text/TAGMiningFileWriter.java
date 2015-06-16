@@ -16,7 +16,7 @@ public class TAGMiningFileWriter {
 	private final static String PATH2 = PATH+"output2.txt";
 	private final static String PATH3 = PATH+"output3.txt";
 	
-
+/*
 	public static void writeOutput1(String warcTrecID,String stringaDaRimpiazzare, String tag){
 
 		PrintWriter out=null;
@@ -34,7 +34,7 @@ public class TAGMiningFileWriter {
 		}
 		
 	}
-
+*/
 	public static void writeOutput2(String warcTrecID, String phrase) {
 		PrintWriter out=null;
 		

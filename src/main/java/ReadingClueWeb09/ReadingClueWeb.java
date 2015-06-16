@@ -123,6 +123,8 @@ public class ReadingClueWeb {
 				
 				//File file = new File("/home/roberto/Scrivania/phases.txt");
 				for(String phrase : phrases){
+					String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
+					String[] temp = cleanedPhrase.split(" ");
 					/*
 					Pattern patternPHONE_NUMBER = Pattern.compile(REGEX_DATE);
 					Matcher matcherPHONE_NUMBER = patternPHONE_NUMBER.matcher(phrase);
@@ -150,20 +152,21 @@ public class ReadingClueWeb {
 					System.out.println("=======================================");
 					System.out.println();
 					*/
-					PrintWriter out=null;
-					
-					try {
-						out = new PrintWriter(new BufferedWriter(new FileWriter("util/phrases", true)));
-						out.println(trecID+"#"+phrase);
+					if(temp.length>3 && temp.length<40){
+						PrintWriter out=null;
 						
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						try {
+							out = new PrintWriter(new BufferedWriter(new FileWriter("util/phrases", true)));
+							out.println(trecID+"#"+cleanedPhrase);
+							
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						finally{
+							out.close();
+						}
 					}
-					finally{
-						out.close();
-					}
-					
 					//String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
 					//TAGComponent.tagPhrase(trecID, cleanedPhrase);
 					
