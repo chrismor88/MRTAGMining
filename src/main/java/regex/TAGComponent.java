@@ -126,8 +126,8 @@ public class TAGComponent {
 
 	
 	private final static String REGEX_PHONE = "(\\s\\d{3}-\\d{4,5}\\s)|(\\s\\(\\d{3}\\)\\s(\\/\\s)?\\d{3}-\\d{4,5}\\s)|(\\s(\\d{2}-|\\+)\\d{2}-\\d{2}-\\d{3}-\\d{5}\\s)|(\\s(\\+)?\\d-\\d{3}-\\d{3}-\\d{4}\\s)|"+
-			"(\\s\\d{3}-\\d{3}-\\d{3}-\\d{4}\\s)|(\\s(\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4}\\s)|(\\s(\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4}\\s)|(\\s\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4}\\s)";
-	
+			"(\\s\\d{3}-\\d{3}-\\d{3}-\\d{4}\\s)|(\\s(\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4}\\s)|(\\s(\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4}\\s)|(\\s\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4}\\s)|"+
+			"(\\(\\d{3}\\)\\d{3}-\\d{4})";
 	
 	private final static String REGEX_DATE = date1+"|"+date2+"|"+date3+"|"+date4+"|"+date5+"|"+date6+"|"+date7+"|"+date8+"|"+date9+"|"+date10+"|"+date11+"|"+date12;
 	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
