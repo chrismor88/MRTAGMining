@@ -76,7 +76,7 @@ public class ReadingClueWeb {
 		
 		
 		// Set up a local compressed WARC file for reading 
-        String inputWarcFile="/home/roberto/Scaricati/00.warc.gz";
+        String inputWarcFile="util/00.warc.gz";
             // open our gzip input stream
             GZIPInputStream gzInputStream=new GZIPInputStream(new FileInputStream(inputWarcFile));
             
