@@ -17,7 +17,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class tagger {
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 		
-		
+		FileWriter f = new FileWriter("tempo di esecuzione MapReduce.txt");	
+		Date start = new Date();
 		Configuration conf = new Configuration();
 		
 		
@@ -36,7 +37,9 @@ public class tagger {
 	    
 	   
 	    
-	    
+	    Date end = new Date();
+		f.write("Tempo di esecuzione in ms: "+(end.getTime()-start.getTime()));
+		f.close();
 
 		
 	}
