@@ -28,6 +28,8 @@ public class ReadingCommonCrawl {
 	
 	public static void main(String[] args) throws IOException {
 		System.out.println("inizio lettura file warc Common Crawl");
+		long start = System.currentTimeMillis();
+		
 		File f = new File(WarcPath+"CC-MAIN-20150417045713-00000-ip-10-235-10-82.ec2.internal.warc.gz");
 		String INPUT_GZIP_FILE = WarcPath+f.getName();
 		FileInputStream is = null;
@@ -88,6 +90,9 @@ public class ReadingCommonCrawl {
 			}
 		
 		}
+        System.out.println("CONCLUSO");
+        long end = System.currentTimeMillis();
+        System.out.println("in: "+(end-start));
 	}
 	
 	private static String getHTMLBody(String HTMLContent){
