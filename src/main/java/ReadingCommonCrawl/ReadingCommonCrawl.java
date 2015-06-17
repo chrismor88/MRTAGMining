@@ -27,7 +27,7 @@ public class ReadingCommonCrawl {
 	static final String PhrasesPath = "util/phrasesCommonCrawl.txt";
 	
 	public static void main(String[] args) throws IOException {
-		System.out.println("inizio lettura file warc Common Crawl");
+		System.out.println("inizio estrazione frasi da Common Crawl");
 		long start = System.currentTimeMillis();
 		
 		File f = new File(WarcPath+"CC-MAIN-20150417045713-00000-ip-10-235-10-82.ec2.internal.warc.gz");

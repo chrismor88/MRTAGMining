@@ -17,7 +17,7 @@ public class TAGComponent {
 
 	/* REGEX */
 
-	private final static String TLDs = "\\.(com|us|it|en|org|edu|net|fr|es)";
+	private final static String TLDs = "\\.(com|us|it|en|org|edu|net|fr|es|gov)";
 	//for format time hh:mm:ss, hh:mm, hh:mm am, hh:mm:ss pm ...........
 	private final static String time1 ="(([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?\\s?(am|AM|pm|PM)?)";
 
@@ -91,13 +91,12 @@ public class TAGComponent {
 	
 	
 
-	private final static String LENGTH_MEASURE = "(((k|c|d|m)?m)|((kilo|deci|centi|milli)?meter)|(mi|ft|yd|yard|naut mi|hand|span|mile(s?)|inch(es)?|NM|nm))\\s";
-	private final static String AREA_MEASURE = "(((k|c|d|m)?m\\^2)|(mi\\^2)|((in|inch(es)?|yd|ft|NM|nm)\\^2)|(ro|acro))\\s";
-	private final static String SPEED_MEASURE = "((m\\/s)|(m\\/min)|(m\\/h)|(km\\/h)|(in\\/s)|(ft\\/s)|(ft\\/m)|(ft\\/h)|(km|m|miles)ph|mps|knot|kn|rpm|(rad\\/s)|(rad\\/min))\\s";
-	private final static String WEIGHT_MEASURE = "(t|kg|hg|g|dg|cg|mg|µg|carat|lb|cwt|ton|(milli|kilo|centi|deci|deka|hecto)?gram(s?)|once(s)?|pound(s?)|grain(s?))\\s";
-	private final static String VOLUME_MEASURE = "((m|d|k|c)?m\\^3|(d|c|m)?l|in\\^3|ft\\^3|yd\\^3|gal|bbl|pt|(dry|fluid)\\spt)\\s";
+	private final static String LENGTH_MEASURE = "(((k|c|d|m)?m)|((kilo|deci|centi|milli)?meter)|(mi|ft|yd|yard|naut mi|hand|span|mile(s?)|inch(es)?|NM|nm))[\\s,;]";
+	private final static String AREA_MEASURE = "(((k|c|d|m)?m\\^2)|(mi\\^2)|((in|inch(es)?|yd|ft|NM|nm)\\^2)|(ro|acro))[\\s,;]";
+	private final static String SPEED_MEASURE = "((m\\/s)|(m\\/min)|(m\\/h)|(km\\/h)|(in\\/s)|(ft\\/s)|(ft\\/m)|(ft\\/h)|(km|m|miles)ph|mps|knot|kn|rpm|(rad\\/s)|(rad\\/min))[\\s,;]";
+	private final static String WEIGHT_MEASURE = "(t|kg|hg|g|dg|cg|mg|µg|carat|lb|cwt|ton|(milli|kilo|centi|deci|deka|hecto)?gram(s?)|once(s)?|pound(s?)|grain(s?))[\\s,;]";
+	private final static String VOLUME_MEASURE = "((m|d|k|c)?m\\^3|(d|c|m)?l|in\\^3|ft\\^3|yd\\^3|gal|bbl|pt|(dry|fluid)\\spt)[\\s,;]";
 	private final static String TEMPERATURE_MEASURE = "((c|C)elsius|°C|(k|K)elvin|°K|(f|F)ahrenheit|°F)";
-	private final static String PRESSURE_MEASURE = "(bar|Pa(scal)?|at(m?)|Torr|psi)";
 	private final static String DATA_MEASURE = "((giga|Giga||mega|Mega|kilo|Kilo|Tera|tera|peta|Peta|Exa|exa|Yotta|yotta)?byte(s?)|bit|(G|M|K|T|E|Y)B)";
 	private final static String DATA_RATE_MEASURE = "(Kbps|Mbps|Gbps|(Kb\\/s(ec)?)|(Mb\\/s(ec)?)|(Gb\\/s(ec?))|(KB\\/s(ec)?)|(MB\\/s(ec)?)|(GB\\/s(ec)?))";
 
@@ -105,40 +104,30 @@ public class TAGComponent {
 	private final static String REGEX_NUM = "(([\\+-]?[1-9]\\d*)|([\\+-]?\\d[\\.,]\\d+))";
 	
 	
-//	private final static String REGEX_URL = "(http(s?):\\/\\/)*((\\w+(\\.|-|_)\\w+)+|\\w+)"+TLDs;
-//	private final static String REGEX_URL = "(http(s?):\\/\\/)*((\\w+(\\.|-|_)\\w+)+|\\w+)\\.[a-z]{2,4}";
-	private final static String REGEX_URL = "(http(s?):\\/\\/)?([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?"+TLDs+"(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*)";
+	private final static String REGEX_URL = "(http(s?):\\/\\/)?([a-zA-Z0-9]([a-zA-Z0-9-\\.]{0,61}[a-zA-Z0-9])?"+TLDs+"(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*)(\\.html)?";
+	
 	private final static String REGEX_DISTANCE = "\\d+([\\.,]\\d+)?"+"\\s?"+LENGTH_MEASURE;
 	private final static String REGEX_AREA = "\\d+([\\.,]\\d+)?"+"\\s?"+AREA_MEASURE;
 	private final static String REGEX_VOLUME = "\\d+([\\.,]\\d+)?"+"\\s?"+VOLUME_MEASURE;
 	private final static String REGEX_SPEED = "\\d+([\\.,]\\d+)?"+"\\s?"+SPEED_MEASURE;
 	private final static String REGEX_WEIGHT = "\\d+([\\.,]\\d+)?"+"\\s?"+WEIGHT_MEASURE;
 	private final static String REGEX_TEMPERATURE = REGEX_NUM+"\\s?"+TEMPERATURE_MEASURE;
-	private final static String REGEX_PRESSURE = REGEX_NUM+"\\s?"+PRESSURE_MEASURE;
 	private final static String REGEX_DATA_RATE = "\\d+([\\.,]\\d+)?"+"\\s*"+DATA_RATE_MEASURE;
 	private final static String REGEX_TIME = time1+"|"+time2;
 	private final static String REGEX_MONEY = CURRENCY+"\\s?\\d+(\\.|,)\\d+|\\d+(\\.|,)\\d+\\s?"+CURRENCY+"|"+CURRENCY+"\\s?\\d+"+"|"+"\\s\\d+\\s?"+CURRENCY;
-	private final static String REGEX_DATA = REGEX_NUM+"\\s?"+DATA_MEASURE;
-	private final static String REGEX_DATE_RANGE = "([12]\\d{3}[\\/-][12]\\d{3})|([12]\\d{3}[\\/-]\\d{2})";
-	
-	/*
-	private final static String REGEX_PHONE = "((\\+)*(\\d+-)*\\(\\d+\\)(-|\\s)+\\d+(-|\\s)*\\d+)| (\\d+\\.\\d+\\.\\d+)|((\\+)*\\d+\\s\\d+\\s\\d+(\\s\\d+)*)|(\\d+-\\d+-\\d+\\d+\\s\\d+)|((\\+)+\\d*\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+)|((\\d+\\s)+\\d+\\s(\\()+\\d+(\\))+\\s\\d+\\s\\d+)|((\\+\\d+\\s)*\\d+-\\d+\\s\\d+)"+
-			"|(\\d+\\s\\(\\d+\\)\\s\\d+\\s\\d+)|(\\d{3,4}\\s\\d{4})|((\\+)?\\d{1,2}-\\d{2,3}-\\d{3}-\\d{4}\\s)|"+
-			"(\\s\\d{3}-\\d{5}\\s)|(\\s\\(\\d{3}\\)\\s(\\/\\s)?\\d{3}-\\d{4,5}\\s)|(\\sd{2}-\\d{2}-\\d{2}-\\d{3}-\\d{5}\\s)|(\\s\\d{3}(-|\\s)\\d{3}(-|\\s)\\d{3}(-|\\s)\\d{4}\\s)";
-	*/
+	private final static String REGEX_DATA = "\\d+([\\.,]\\d+)?"+"\\s?"+DATA_MEASURE;
+	private final static String REGEX_DATE_RANGE = "(1\\d{3}[\\/-]1\\d{3})|(1\\d{3}[\\/-]2\\d{3})|(2\\d{3}[\\/-]2\\d{3})|([12]\\d{3}(\\/)\\d{2})";
+
 
 	
-	private final static String REGEX_PHONE = "(\\s\\d{3}-\\d{4,5}\\s)|(\\s\\(\\d{3}\\)\\s(\\/\\s)?\\d{3}-\\d{4,5}\\s)|(\\s(\\d{2}-|\\+)\\d{2}-\\d{2}-\\d{3}-\\d{5}\\s)|(\\s(\\+)?\\d-\\d{3}-\\d{3}-\\d{4}\\s)|"+
-			"(\\s\\d{3}-\\d{3}-\\d{3}-\\d{4}\\s)|(\\s(\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4}\\s)|(\\s(\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4}\\s)|(\\s\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4}\\s)|"+
-			"(\\(\\d{3}\\)\\d{3}-\\d{4})";
+	private final static String REGEX_PHONE = "(\\d{3}-\\d{4,5})|(\\(\\d{3}\\)\\s(\\/\\s)?\\d{3}-\\d{4,5})|((\\d{2}-|\\+)\\d{2}-\\d{2}-\\d{3}-\\d{5})|((\\+)?\\d-\\d{3}-\\d{3}-\\d{4})|"+
+			"(\\d{3}-\\d{3}-\\d{3}-\\d{4})|((\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4})|((\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4})|(\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4})|"+
+			"(\\(\\d{3}\\)\\s?\\d{3}-\\d{4})|(\\d{3}-\\d{3}-\\d{4})|(\\+\\d{2}-\\d{2}-\\d{3}-\\d{5})|(\\(\\+\\d{2}\\)-\\d{3}-\\d{3}-\\d{4})|(\\(\\+\\d{3}\\)\\s\\d{3}-\\d{4})";
+	
 	
 	
 	private final static String REGEX_DATE = date1+"|"+date2+"|"+date3+"|"+date4+"|"+date5+"|"+date6+"|"+date7+"|"+date8+"|"+date9+"|"+date10+"|"+date11+"|"+date12;
-//	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
-//	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+\\.[a-z]{2,4}";
 	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
-
-
 
 
 
@@ -159,10 +148,8 @@ public class TAGComponent {
 	final static String TAG_PHONE = " #PHONE ";
 	final static String TAG_EMAIL = " #EMAIL ";
 	final static String TAG_TEMPERATURE = " #TEMPERATURE ";
-	final static String TAG_PRESSURE = " #PRESSURE ";
 	final static String TAG_DATA = " #DATA ";
 	final static String TAG_DATE_RANGE = " #DATE_RANGE ";
-
 
 
 
@@ -175,18 +162,7 @@ public class TAGComponent {
 		String secondPart = temp.substring(temp.length()/2);
 
 		if(firstPart.equals(secondPart)){
-			/*
-			System.out.println("=====================");
-			System.out.println("Stringa originaria: "+phrase);
-			System.out.println("First Part: "+firstPart);
-			System.out.println("Second Part: "+secondPart);
-			 */
-			phrase = firstPart+" "+secondPart;
-			/*
-			System.out.println("Frase separata: "+phrase);
-			System.out.println("=====================");
-			System.out.println();
-			 */
+			phrase = firstPart+" "+secondPart;		
 		}
 
 
@@ -197,6 +173,7 @@ public class TAGComponent {
 		changedPhrase = tagPhraseDATE(trecID,changedPhrase);
 		changedPhrase = tagPhraseTIME(trecID,changedPhrase);
 		changedPhrase = tagPhrasePHONE(trecID,changedPhrase);
+		changedPhrase = tagPhraseDATE_RANGE(trecID, changedPhrase);
 		changedPhrase = tagPhraseMONEY(trecID,changedPhrase);
 		changedPhrase = tagPhraseAREA(trecID,changedPhrase);
 		changedPhrase = tagPhraseVOLUME(trecID,changedPhrase);
@@ -204,18 +181,11 @@ public class TAGComponent {
 		changedPhrase = tagPhraseDISTANCE(trecID,changedPhrase);
 		changedPhrase = tagPhraseTEMPERATURE(trecID,changedPhrase);
 		changedPhrase = tagPhraseWEIGHT(trecID,changedPhrase);
-		changedPhrase = tagPhrasePRESSURE(trecID,changedPhrase);
 		changedPhrase = tagPhraseDATA_RATE(trecID,changedPhrase);
 		changedPhrase = tagPhraseDATA(trecID,changedPhrase);
 		changedPhrase = tagPhraseORD(trecID,changedPhrase);
 		changedPhrase = tagPhraseNUM(trecID,changedPhrase);
 
-
-
-		if(!phrase.equals(changedPhrase)){
-			//TAGMiningFileWriter.writeOutput2(trecID,phrase);
-			//TAGMiningFileWriter.writeOutput3(trecID,changedPhrase);
-		}
 		return changedPhrase;
 
 	}
@@ -234,15 +204,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_ORD);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_ORD+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -265,15 +226,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_WEIGHT);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_WEIGHT+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -296,15 +248,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_SPEED);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_SPEED+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -327,15 +270,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_DATA+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -347,33 +281,7 @@ public class TAGComponent {
 
 
 
-	private static String tagPhrasePRESSURE(String trecID, String phrase) {
-		String changedPhrase = phrase;
-		int startIndex, endIndex = 0;
-
-
-		Pattern pattern = Pattern.compile(REGEX_PRESSURE);
-		Matcher matcher = pattern.matcher(phrase);
-		while(matcher.find()){
-
-			startIndex = matcher.start();
-			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PRESSURE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-
-			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_PRESSURE+changedPhrase.substring(endIndex);
-			matcher = pattern.matcher(changedPhrase);
-		}
-
-		return changedPhrase;
-	}
+	
 
 
 
@@ -390,15 +298,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TEMPERATURE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_TEMPERATURE+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -421,15 +320,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_NUM);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_NUM+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -452,13 +342,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATA_RATE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_DATA_RATE+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -481,13 +364,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_VOLUME);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_VOLUME+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -510,13 +386,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_AREA);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_AREA+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -539,13 +408,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DISTANCE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_DISTANCE+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -568,13 +430,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_MONEY);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_MONEY+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -597,13 +452,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_TIME);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_TIME+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -626,13 +474,6 @@ public class TAGComponent {
 
 			startIndex = matcher.start();
 			endIndex = matcher.end();
-			String matchedSubString = matcher.group();
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_EMAIL);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_EMAIL+changedPhrase.substring(endIndex);
 			matcher = pattern.matcher(changedPhrase);
@@ -659,14 +500,6 @@ public class TAGComponent {
 
 			startIndex = matcherDATE.start();
 			endIndex = matcherDATE.end();
-			String matchedSubString = matcherDATE.group();
-			//System.out.println(phrase);
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_DATE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_DATE+changedPhrase.substring(endIndex);
 			matcherDATE = patternDATE.matcher(changedPhrase);
@@ -688,14 +521,6 @@ public class TAGComponent {
 
 			startIndex = matcherPHONE.start();
 			endIndex = matcherPHONE.end();
-			String matchedSubString = matcherPHONE.group();
-			//System.out.println("MATCHED SUBSTRING: "+matchedSubString);
-
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_PHONE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_PHONE+changedPhrase.substring(endIndex);
 			matcherPHONE = patternPHONE.matcher(changedPhrase);
@@ -704,6 +529,24 @@ public class TAGComponent {
 		return changedPhrase;
 	}
 	
+	private static String tagPhraseDATE_RANGE(String trecID, String phrase) {
+		String changedPhrase = phrase;
+		int startIndex, endIndex = 0;
+
+
+		Pattern pattern = Pattern.compile(REGEX_DATE_RANGE);
+		Matcher matcher = pattern.matcher(phrase);
+		while(matcher.find()){
+
+			startIndex = matcher.start();
+			endIndex = matcher.end();
+
+			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_DATE_RANGE+changedPhrase.substring(endIndex);
+			matcher = pattern.matcher(changedPhrase);
+		}
+
+		return changedPhrase;
+	}
 
 
 
@@ -714,7 +557,6 @@ public class TAGComponent {
 		try (BufferedReader reader = new BufferedReader(new FileReader(filePhoneNumber))) {
 			String line = null;
 			
-			//System.out.println("============= TESTO ORIGINALE  E MODIFICATO =================");
 			while ((line = reader.readLine()) != null) {
 				//System.out.println("Linea originale: "+line);
 				//String lineChanged = tagPhraseNUM("", line);
@@ -739,14 +581,7 @@ public class TAGComponent {
 			
 			startIndex = matcherURL.start();
 			endIndex = matcherURL.end();
-			String matchedSubString = matcherURL.group();
 		
-			try {
-				//TAGMiningFileWriter.writeOutput1(trecID,matchedSubString, TAG_URL);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
 			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_URL+changedPhrase.substring(endIndex);
 			matcherURL = patternURL.matcher(changedPhrase);
 		}
