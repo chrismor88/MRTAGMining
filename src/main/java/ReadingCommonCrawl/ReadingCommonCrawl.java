@@ -23,11 +23,12 @@ import phrases.SentenceDetector;
 
 public class ReadingCommonCrawl {
 	
-	static final String WarcPath ="util/CC-MAIN-20150417045713-00000-ip-10-235-10-82.ec2.internal.warc.gz";
+	static final String WarcPath ="util/";
 	static final String PhrasesPath = "util/phrasesCommonCrawl.txt";
 	
 	public static void main(String[] args) throws IOException {
-		File f = new File(WarcPath);
+		System.out.println("inizio lettura file warc Common Crawl");
+		File f = new File(WarcPath+"CC-MAIN-20150417045713-00000-ip-10-235-10-82.ec2.internal.warc.gz");
 		String INPUT_GZIP_FILE = WarcPath+f.getName();
 		FileInputStream is = null;
 		
@@ -48,6 +49,8 @@ public class ReadingCommonCrawl {
 				if ((r.getHeader().getMimetype().equals("application/http; msgtype=response"))&&
 						(r.getHeader().getContentLength()>300)){
 					//String url = r.getHeader().getUrl();
+					trecID = r.getHeader().getUrl();
+					System.out.println(trecID);
 					rawData = IOUtils.toByteArray(r, r.available());
 
 					String HTMLContent = new String(rawData);
@@ -56,8 +59,6 @@ public class ReadingCommonCrawl {
 						if (HTMLContent.indexOf("<")!=-1){
 							HTMLContent2 = HTMLContent.substring(HTMLContent.indexOf("<"));
 						}
-						
-							
 						
 						String content = getHTMLBody(HTMLContent2);
 						phrases = SentenceDetector.sentenceDetect(content);
@@ -95,17 +96,22 @@ public class ReadingCommonCrawl {
 
 
 			Element bodyHTML = Jsoup.parse(HTMLContent, "UTF-8").body();
-
-
-			Elements pTags = bodyHTML.getElementsByTag("p");
-
-			for(Element p:pTags){
-
-				String[] parole = p.text().split(" ");
-
-				if(parole.length > 4){
-
-					aux += p.text();
+			Elements pTags = null;
+			try {
+				pTags = bodyHTML.getElementsByTag("p");
+			} catch (NullPointerException e) {
+				// TODO: handle exception
+			}
+			
+			if (pTags!=null){
+				for(Element p:pTags){
+	
+					String[] parole = p.text().split(" ");
+	
+					if(parole.length > 4){
+	
+						aux += p.text();
+					}
 				}
 			}
 
