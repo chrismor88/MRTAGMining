@@ -52,7 +52,7 @@ public class ReadingCommonCrawl {
 						(r.getHeader().getContentLength()>300)){
 					//String url = r.getHeader().getUrl();
 					trecID = r.getHeader().getUrl();
-					System.out.println(trecID);
+					
 					rawData = IOUtils.toByteArray(r, r.available());
 
 					String HTMLContent = new String(rawData);

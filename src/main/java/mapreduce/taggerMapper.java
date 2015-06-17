@@ -46,8 +46,8 @@ public class taggerMapper extends Mapper<Object, Text, Text, Text> {
 			pw2.println(trecID+"\t"+TaggedPhase);
 			pw.close();
 			pw2.close();*/
-			TAGMiningFileWriter.writeOutput2(trecID,singlePhrase);
-			TAGMiningFileWriter.writeOutput3(trecID, TaggedPhase);
+			//TAGMiningFileWriter.writeOutput2(trecID,singlePhrase);
+			//TAGMiningFileWriter.writeOutput3(trecID, TaggedPhase);
 			phrase.set(line);
 			phrase2.set(TaggedPhase);
 			context.write(phrase, phrase2);
