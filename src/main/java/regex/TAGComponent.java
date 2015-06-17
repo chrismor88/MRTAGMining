@@ -18,6 +18,7 @@ public class TAGComponent {
 	/* REGEX */
 
 	private final static String TLDs = "\\.(com|us|it|en|org|edu|net|fr|es|gov)";
+	
 	//for format time hh:mm:ss, hh:mm, hh:mm am, hh:mm:ss pm ...........
 	private final static String time1 ="(([0-9]|0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?\\s?(am|AM|pm|PM)?)";
 
@@ -39,19 +40,19 @@ public class TAGComponent {
 			"September|september|Sept(\\.)?|SEPT(\\.)?|sept(\\.)?|October|october|Oct(\\.)?|OCT(\\.)?|oct(\\.)?|November|november|Nov(\\.)?|NOV(\\.)?|nov(\\.)?|December|december|Dec(\\.)?|DEC(\\.)?|dec(\\.)?)";
 		
 	//for format dd/mm/yyyy o d/m/yyyy
-	private final static String date1 = "\\s\\d{1,2}\\/\\d{1,2}\\/(19|20)\\d{2}\\s";
+	private final static String date1 = "\\d{1,2}\\/\\d{1,2}\\/(19|20)\\d{2}";
 	
 	
 	//for format dd-mm-yyyy o d-m-yyyy
-	private final static String date2 = "\\s\\d{1,2}-\\d{1,2}-(19|20)\\d{2}\\s";
+	private final static String date2 = "\\d{1,2}-\\d{1,2}-(19|20)\\d{2}";
 	
 	
 	//for format dd mm yyyy o   d m yyyy
-	private final static String date3 = "\\s\\d{1,2}\\s\\d{1,2}\\s(19|20)\\d{2}\\s";
+	private final static String date3 = "\\d{1,2}\\s\\d{1,2}\\s(19|20)\\d{2}";
 	
 	
 	//for format yyyy mm dd o yyyy m d
-	private final static String date4 = "\\s(19|20)\\d{2}\\s\\d{1,2}\\s\\d{1,2}\\s";
+	private final static String date4 = "(19|20)\\d{2}\\s\\d{1,2}\\s\\d{1,2}";
 	
 	
 	//for format dth mm yyyy o  dth m yyyyy
@@ -70,25 +71,20 @@ public class TAGComponent {
 	private final static String date8 = "\\s"+MONTH+"\\s"+REGEX_ORD+"(,?\\s*)?\\s*(19|20)\\d{2}\\s";
 	
 	//for format dd.mm.yyyy o d.m.yyyy o yyyy.mm.yy o yyyy.m.y o dd.mm.yy o mm.dd.yy
-	private final static String date9 = "(\\s\\d{1,2}(\\.)\\d{1,2}(\\.)(19|20)\\d{2}\\s)|(\\s(19|20)\\d{2}(\\.)\\d{1,2}(\\.)\\d{1,2}\\s)|(\\s\\d{1,2}\\.\\d{1,2}\\.\\d{2}\\s)";
+	private final static String date9 = "(\\d{1,2}(\\.)\\d{1,2}(\\.)(19|20)\\d{2})|((19|20)\\d{2}(\\.)\\d{1,2}(\\.)\\d{1,2})|(\\d{1,2}\\.\\d{1,2}\\.\\d{2})";
 	
 	
 	//for format yyyy-mm-dd o yyyy-m-d
-	private final static String date10 = "\\s(19|20)\\d{2}-\\d{1,2}-\\d{1,2}\\s";
+	private final static String date10 = "(19|20)\\d{2}-\\d{1,2}-\\d{1,2}";
 	
 	//for format yyyy-MONTH-dd o dd-MONTH-yyyy
-	private final static String date11 = "\\s(19|20)\\d{2}-"+MONTH+"-\\d{1,2}\\s*|\\s*\\d{1,2}-"+MONTH+"-(19|20)\\d{2}\\s";
+	private final static String date11 = "(19|20)\\d{2}-"+MONTH+"-\\d{1,2}\\s*|\\s*\\d{1,2}-"+MONTH+"-(19|20)\\d{2}";
 	
 	//for format MONTH yyyy o dd MONTH yyyy
 	private final static String date12 = "((\\s\\d{1,2})?\\s"+MONTH+"\\s(19|20)\\d{2}\\s)";
 	
 	
 
-	
-	
-	
-	
-	
 	
 
 	private final static String LENGTH_MEASURE = "(((k|c|d|m)?m)|((kilo|deci|centi|milli)?meter)|(mi|ft|yd|yard|naut mi|hand|span|mile(s?)|inch(es)?|NM|nm))[\\s,;]";
@@ -99,13 +95,11 @@ public class TAGComponent {
 	private final static String TEMPERATURE_MEASURE = "((c|C)elsius|°C|(k|K)elvin|°K|(f|F)ahrenheit|°F)";
 	private final static String DATA_MEASURE = "((giga|Giga||mega|Mega|kilo|Kilo|Tera|tera|peta|Peta|Exa|exa|Yotta|yotta)?byte(s?)|bit|(G|M|K|T|E|Y)B)";
 	private final static String DATA_RATE_MEASURE = "(Kbps|Mbps|Gbps|(Kb\\/s(ec)?)|(Mb\\/s(ec)?)|(Gb\\/s(ec?))|(KB\\/s(ec)?)|(MB\\/s(ec)?)|(GB\\/s(ec)?))";
-
-
+	
+	
+	
 	private final static String REGEX_NUM = "(([\\+-]?[1-9]\\d*)|([\\+-]?\\d[\\.,]\\d+))";
-	
-	
 	private final static String REGEX_URL = "(http(s?):\\/\\/)?([a-zA-Z0-9]([a-zA-Z0-9-\\.]{0,61}[a-zA-Z0-9])?"+TLDs+"(\\/\\w+|\\?\\w+|=\\w+|&\\w+)*)(\\.html)?";
-	
 	private final static String REGEX_DISTANCE = "\\d+([\\.,]\\d+)?"+"\\s?"+LENGTH_MEASURE;
 	private final static String REGEX_AREA = "\\d+([\\.,]\\d+)?"+"\\s?"+AREA_MEASURE;
 	private final static String REGEX_VOLUME = "\\d+([\\.,]\\d+)?"+"\\s?"+VOLUME_MEASURE;
@@ -117,21 +111,20 @@ public class TAGComponent {
 	private final static String REGEX_MONEY = CURRENCY+"\\s?\\d+(\\.|,)\\d+|\\d+(\\.|,)\\d+\\s?"+CURRENCY+"|"+CURRENCY+"\\s?\\d+"+"|"+"\\s\\d+\\s?"+CURRENCY;
 	private final static String REGEX_DATA = "\\d+([\\.,]\\d+)?"+"\\s?"+DATA_MEASURE;
 	private final static String REGEX_DATE_RANGE = "(1\\d{3}[\\/-]1\\d{3})|(1\\d{3}[\\/-]2\\d{3})|(2\\d{3}[\\/-]2\\d{3})|([12]\\d{3}(\\/)\\d{2})";
+	private final static String REGEX_YEAR = "(19|20)\\d{2}";
 
-
-	
 	private final static String REGEX_PHONE = "(\\d{3}-\\d{4,5})|(\\(\\d{3}\\)\\s(\\/\\s)?\\d{3}-\\d{4,5})|((\\d{2}-|\\+)\\d{2}-\\d{2}-\\d{3}-\\d{5})|((\\+)?\\d-\\d{3}-\\d{3}-\\d{4})|"+
 			"(\\d{3}-\\d{3}-\\d{3}-\\d{4})|((\\d{3}\\s)?\\d{3}\\s\\d{3}\\s\\d{4})|((\\+\\d\\s)?\\d{3}\\s\\d{3,4}\\s\\d{4})|(\\+\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{4})|"+
 			"(\\(\\d{3}\\)\\s?\\d{3}-\\d{4})|(\\d{3}-\\d{3}-\\d{4})|(\\+\\d{2}-\\d{2}-\\d{3}-\\d{5})|(\\(\\+\\d{2}\\)-\\d{3}-\\d{3}-\\d{4})|(\\(\\+\\d{3}\\)\\s\\d{3}-\\d{4})";
-	
-	
 	
 	private final static String REGEX_DATE = date1+"|"+date2+"|"+date3+"|"+date4+"|"+date5+"|"+date6+"|"+date7+"|"+date8+"|"+date9+"|"+date10+"|"+date11+"|"+date12;
 	private final static String REGEX_EMAIL = "\\w+(\\.)*\\w+@\\w+(-)*\\w+"+TLDs;
 
 
-
-
+	
+	
+	
+	
 	/* TAG STRING*/
 	final static String TAG_DATE = " #DATE ";
 	final static String TAG_TIME = " #TIME ";
@@ -150,11 +143,13 @@ public class TAGComponent {
 	final static String TAG_TEMPERATURE = " #TEMPERATURE ";
 	final static String TAG_DATA = " #DATA ";
 	final static String TAG_DATE_RANGE = " #DATE_RANGE ";
+	final static String TAG_YEAR = " #YEAR ";
 
 
 
 
-	public static String tagPhrase(String trecID,String phrase){
+
+	public static void tagPhrase(String trecID,String phrase){
 
 		String temp = phrase;
 		temp.trim();
@@ -162,7 +157,7 @@ public class TAGComponent {
 		String secondPart = temp.substring(temp.length()/2);
 
 		if(firstPart.equals(secondPart)){
-			phrase = firstPart+" "+secondPart;		
+			phrase = firstPart+" "+secondPart;
 		}
 
 
@@ -171,9 +166,9 @@ public class TAGComponent {
 		changedPhrase = tagPhraseEMAIL(trecID,phrase);
 		changedPhrase = tagPhraseURL(trecID,changedPhrase);
 		changedPhrase = tagPhraseDATE(trecID,changedPhrase);
+		changedPhrase = tagPhraseDATE_RANGE(trecID, changedPhrase);
 		changedPhrase = tagPhraseTIME(trecID,changedPhrase);
 		changedPhrase = tagPhrasePHONE(trecID,changedPhrase);
-		changedPhrase = tagPhraseDATE_RANGE(trecID, changedPhrase);
 		changedPhrase = tagPhraseMONEY(trecID,changedPhrase);
 		changedPhrase = tagPhraseAREA(trecID,changedPhrase);
 		changedPhrase = tagPhraseVOLUME(trecID,changedPhrase);
@@ -184,12 +179,39 @@ public class TAGComponent {
 		changedPhrase = tagPhraseDATA_RATE(trecID,changedPhrase);
 		changedPhrase = tagPhraseDATA(trecID,changedPhrase);
 		changedPhrase = tagPhraseORD(trecID,changedPhrase);
+		changedPhrase = tagPhraseYEAR(trecID,changedPhrase);
 		changedPhrase = tagPhraseNUM(trecID,changedPhrase);
 
-		return changedPhrase;
+
+		if(!phrase.equals(changedPhrase)){
+			TAGMiningFileWriter.writeOutput2(trecID,phrase);
+			TAGMiningFileWriter.writeOutput3(trecID,changedPhrase);
+		}
 
 	}
 
+
+
+
+	private static String tagPhraseYEAR(String trecID, String phrase) {
+		String changedPhrase = phrase;
+		int startIndex, endIndex = 0;
+
+
+		Pattern pattern = Pattern.compile(REGEX_YEAR);
+		Matcher matcher = pattern.matcher(phrase);
+		while(matcher.find()){
+
+			startIndex = matcher.start();
+			endIndex = matcher.end();
+			String matchedSubString = matcher.group();
+			
+			changedPhrase = changedPhrase.substring(0, startIndex)+TAG_YEAR+changedPhrase.substring(endIndex);
+			matcher = pattern.matcher(changedPhrase);
+		}
+
+		return changedPhrase;
+	}
 
 
 
