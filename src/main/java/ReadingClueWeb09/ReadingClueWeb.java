@@ -25,6 +25,9 @@ import clean.CleanerPhrase;
 
 
 public class ReadingClueWeb {
+	
+	static final String PhrasesPath = "util/phrasesClueWeb.txt";
+	
 	public static void main(String[] args) throws IOException {
 		System.out.println("inizio");
 		long start = System.currentTimeMillis();
@@ -85,7 +88,7 @@ public class ReadingClueWeb {
             
             // iterate through our stream
             WarcRecord thisWarcRecord;
-            //PrintWriter pw = new PrintWriter("/home/roberto/Scrivania/bodyURL.txt");
+
             //creo array di stringhe per memorizzare le frasi
             String[] phrases;
             while ((thisWarcRecord=WarcRecord.readNextWarcRecord(inStream))!=null) {
@@ -106,57 +109,22 @@ public class ReadingClueWeb {
 					HTMLContent2 = HTMLContent.substring(HTMLContent.indexOf("<"));
 				}
 				
-	
-				
-				
-				
-				//String textBody = getHTMLBody(HTMLContent2);
 				
 				
 				//PARTE CHRIS
 				String textBody = getHTMLBody(HTMLContent2);
-
-						
-					
-				
+								
 				phrases = SentenceDetector.sentenceDetect(textBody);
 				
-				//File file = new File("/home/roberto/Scrivania/phases.txt");
 				for(String phrase : phrases){
 					String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
 					String[] temp = cleanedPhrase.split(" ");
-					/*
-					Pattern patternPHONE_NUMBER = Pattern.compile(REGEX_DATE);
-					Matcher matcherPHONE_NUMBER = patternPHONE_NUMBER.matcher(phrase);
-					String taggedPhrase = matcherPHONE_NUMBER.replaceAll(TAG_DATE);
-					*/
-					
-					/*
-					//PARTE CHRIS
-					
-					Pattern patternURL = Pattern.compile(REGEX_URL_new);
-					Matcher matcherURL = patternURL.matcher(phrase);
-					String taggedPhrase = matcherURL.replaceAll(TAG_URL);
-					
-					//PARTE CHRIS
-					System.out.println("========== Frase ORIGINALE ==========");
-					System.out.println(phrase);
-					System.out.println("=======================================");
-					System.out.println();
-					
-					
-					
-					//PARTE CHRIS
-					System.out.println("========== Frase con TAG URL ==========");
-					System.out.println(taggedPhrase);
-					System.out.println("=======================================");
-					System.out.println();
-					*/
+
 					if(temp.length>3 && temp.length<40){
 						PrintWriter out=null;
 						
 						try {
-							out = new PrintWriter(new BufferedWriter(new FileWriter("util/phrases", true)));
+							out = new PrintWriter(new BufferedWriter(new FileWriter(PhrasesPath, true)));
 							out.println(trecID+"#"+cleanedPhrase);
 							
 						} catch (IOException e) {
@@ -167,24 +135,11 @@ public class ReadingClueWeb {
 							out.close();
 						}
 					}
-					//String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
-					//TAGComponent.tagPhrase(trecID, cleanedPhrase);
-					
+										
 				}
 				
-				/*
-				System.out.println(body);
-                System.out.println("====================================");
-                pw.println(HTMLContent2);
-                pw.println("============================");
-                pw.println("estrazione testo jsoup");
-                pw.println("============================");
-                pw.println(body);
-                pw.println("============================");
-                */
               }
             }
-            //pw.close();
             inStream.close();
             System.out.println("CONCLUSO");
             long end = System.currentTimeMillis();
@@ -205,14 +160,11 @@ public class ReadingClueWeb {
 				String[] parole = p.text().split(" ");
 
 				if(parole.length > 4){
-					//System.out.println(p.text());
 					aux += p.text();
 				}
 			}
 
 
-
-			//aux= Jsoup.parse(HTMLContent).body().text();
 
 
 		} catch (NullPointerException e) {

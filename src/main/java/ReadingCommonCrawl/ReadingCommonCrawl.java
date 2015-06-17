@@ -1,7 +1,10 @@
 package ReadingCommonCrawl;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 import org.archive.io.ArchiveReader;
 import org.archive.io.ArchiveRecord;
@@ -14,29 +17,33 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import clean.CleanerPhrase;
 import phrases.SentenceDetector;
 
 
 public class ReadingCommonCrawl {
 	
-	static final String WarcPath ="";
+	static final String WarcPath ="util/CC-MAIN-20150417045713-00000-ip-10-235-10-82.ec2.internal.warc.gz";
+	static final String PhrasesPath = "util/phrasesCommonCrawl.txt";
 	
 	public static void main(String[] args) throws IOException {
 		File f = new File(WarcPath);
 		String INPUT_GZIP_FILE = WarcPath+f.getName();
 		FileInputStream is = null;
 		
-		//ritorna contenuto URL cercato
+
 		is = new FileInputStream(INPUT_GZIP_FILE);
 		ArchiveReader ar = WARCReaderFactory.get(INPUT_GZIP_FILE, is, true);
 
-		//int k = 0;
+
 		String UrlWarc;    
 		byte[] rawData=null;
 		String[] phrases;
+		String trecID = "";
 		for(ArchiveRecord r : ar) {
+			
 			UrlWarc =r.getHeader().getUrl();
-			//System.out.println(UrlWarc);
+
 			if (UrlWarc!=null){
 				if ((r.getHeader().getMimetype().equals("application/http; msgtype=response"))&&
 						(r.getHeader().getContentLength()>300)){
@@ -54,11 +61,31 @@ public class ReadingCommonCrawl {
 						
 						String content = getHTMLBody(HTMLContent2);
 						phrases = SentenceDetector.sentenceDetect(content);
-
+						
+						for(String phrase : phrases){
+							String cleanedPhrase = CleanerPhrase.deleteWastedHTML(phrase);
+							String[] temp = cleanedPhrase.split(" ");
+							if(temp.length>3 && temp.length<40){
+								PrintWriter out=null;
+								
+								try {
+									out = new PrintWriter(new BufferedWriter(new FileWriter(PhrasesPath, true)));
+									
+									out.println(trecID+"#"+cleanedPhrase);
+									
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								finally{
+									out.close();
+								}
+							}
+						}
 					}
 				}
 			}
-			//k++;
+		
 		}
 	}
 	
@@ -77,14 +104,10 @@ public class ReadingCommonCrawl {
 				String[] parole = p.text().split(" ");
 
 				if(parole.length > 4){
-					//System.out.println(p.text());
+
 					aux += p.text();
 				}
 			}
-
-
-
-			//aux= Jsoup.parse(HTMLContent).body().text();
 
 
 		} catch (NullPointerException e) {
